@@ -143,7 +143,7 @@ class ReclineGraphView(ReclineViewBase):
 
     datastore_fields = []
 
-    datastore_field_types = ['numeric', 'int4', 'timestamp']
+    datastore_field_types = ['boolean', 'numeric', 'int4', 'timestamp', 'text']
 
     def list_graph_types(self):
         return [t['value'] for t in self.graph_types]
