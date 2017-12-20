@@ -77,7 +77,7 @@ def obj_list_dictize(obj_list, context, sort_key=lambda x:x):
                 obj, capacity = obj
                 dictized = table_dictize(obj, context, capacity=capacity)
             except Exception as e:
-                print('ERROR: lib.dictization.__init__.py: Exception {0}, object {1}'.format(e, obj))
+                # print('ERROR: lib.dictization.__init__.py: Exception {0}, object {1}'.format(e, obj))
                 dictized = table_dictize(obj, context)
         else:
             dictized = table_dictize(obj, context)
