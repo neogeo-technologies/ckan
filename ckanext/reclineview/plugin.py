@@ -192,7 +192,6 @@ class ReclineMapView(ReclineViewBase):
     map_field_types = [{'value': 'lat_long',
                         'text': 'Latitude / Longitude fields'},
                        {'value': 'geojson', 'text': 'GeoJSON'}]
-
     datastore_fields = []
 
     datastore_field_latlon_types = ['numeric']
