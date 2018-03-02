@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckan 2.7.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-01 09:34+0000\n"
+"POT-Creation-Date: 2018-03-02 15:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1995,6 +1995,11 @@ msgstr ""
 #: ckan/public/base/javascript/modules/resource-view-filters.js:52
 #: ckan/public/base/javascript/modules/resource-view-filters.min.js:3
 msgid "Select a field"
+msgstr ""
+
+#: ckan/public/base/javascript/modules/resource-view-reorder.js:36
+#: ckan/public/base/javascript/modules/resource-view-reorder.min.js:1
+msgid "Reorder resource view"
 msgstr ""
 
 #: ckan/public/base/javascript/modules/slug-preview.js:57
