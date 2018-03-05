@@ -222,6 +222,7 @@ setup(
         'ckan': [
             ('templates/importer/**', 'ignore', None),
             ('templates/**.html', 'ckan', None),
+            ('templates/**.text', 'ckan', None),
             ('templates/**.txt', 'ckan', None),
             ('templates_legacy/**.html', 'ckan', None),
             ('public/base/test/**', 'ignore', None),

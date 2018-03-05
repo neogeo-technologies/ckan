@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckan 2.7.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-02 15:03+0000\n"
-"PO-Revision-Date: 2018-03-02 16:11+0100\n"
+"POT-Creation-Date: 2018-03-05 14:00+0000\n"
+"PO-Revision-Date: 2018-03-05 15:05+0100\n"
 "Last-Translator: Steve King <steve.king@kimepe.com>, 2017\n"
 "Language: fr\n"
 "Language-Team: French (https://www.transifex.com/okfn/teams/11162/fr/)\n"
@@ -2157,6 +2157,26 @@ msgstr "Rechercher"
 #: ckan/templates/page.html:6
 msgid "Skip to content"
 msgstr "Passer directement au contenu"
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:1
+msgid "You have {num} new activity on your {site_title} dashboard."
+msgid_plural "You have {num} new activities on your {site_title} dashboard."
+msgstr[0] ""
+"Vous avez {num} nouvelle activité sur votre tableau de bord sur {site_title}."
+msgstr[1] ""
+"Vous avez {num} nouvelles activités sur votre tableau de bord sur {site_title}."
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:1
+msgid "To view your dashboard, click on this link:"
+msgstr "Pour accéder au tableau de bord, veuillez cliquer sur ce lien :"
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:5
+msgid ""
+"You can turn off these email notifications in your {site_title} preferences. To "
+"change your preferences, click on this link:"
+msgstr ""
+"Vous pouvez désactiver les notifications e-mail dans les préférences du site "
+"{site_title}. Pour modifier vos préférences, veuillez cliquer sur ce lien :"
 
 #: ckan/templates/activity_streams/activity_stream_items.html:9
 msgid "Load less"

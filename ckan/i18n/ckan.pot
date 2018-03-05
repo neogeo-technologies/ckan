@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckan 2.7.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-02 15:03+0000\n"
+"POT-Creation-Date: 2018-03-05 14:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2116,6 +2116,22 @@ msgstr ""
 
 #: ckan/templates/page.html:6
 msgid "Skip to content"
+msgstr ""
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:1
+msgid "You have {num} new activity on your {site_title} dashboard."
+msgid_plural "You have {num} new activities on your {site_title} dashboard."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:1
+msgid "To view your dashboard, click on this link:"
+msgstr ""
+
+#: ckan/templates/activity_streams/activity_stream_email_notifications.text:5
+msgid ""
+"You can turn off these email notifications in your {site_title} preferences. "
+"To change your preferences, click on this link:"
 msgstr ""
 
 #: ckan/templates/activity_streams/activity_stream_items.html:9
