@@ -1,7 +1,7 @@
 this.recline = this.recline || {};
 this.recline.Backend = this.recline.Backend || {};
 this.recline.Backend.DataProxy = this.recline.Backend.DataProxy || {};
-var _this = this;
+var _i18n = this.ckan.i18n;
 
 (function(my) {
   "use strict";
@@ -1066,9 +1066,9 @@ my.Flot = Backbone.View.extend({
     <div class="recline-flot"> \
       <div class="panel graph" style="display: block;"> \
         <div class="js-temp-notice alert alert-warning alert-block"> \
-          <h3 class="alert-heading">' + _this._('Hey there!') + '</h3> \
-          <p>' + _this._("There's no graph here yet because we don't know what fields you'd like to see plotted.") + '</p> \
-          <p>' + _this._("Please tell us by <strong>using the menu on the right</strong> and a graph will automatically appear.") + '</p> \
+          <h3 class="alert-heading">' + _i18n._('Hey there!') + '</h3> \
+          <p>' + _i18n._("There's no graph here yet because we don't know what fields you'd like to see plotted.") + '</p> \
+          <p>' + _i18n._("Please tell us by <strong>using the menu on the right</strong> and a graph will automatically appear.") + '</p> \
         </div> \
       </div> \
     </div> \
@@ -1407,22 +1407,22 @@ my.FlotControls = Backbone.View.extend({
     <form class="form-stacked"> \
       <div class="clearfix"> \
         <div class="form-group"> \
-          <label>' + _this._('Graph Type') + '</label> \
+          <label>' + _i18n._('Graph Type') + '</label> \
           <div class="input editor-type"> \
             <select class="form-control"> \
-              <option value="lines-and-points">' + _this._('Lines and Points') + '</option> \
-              <option value="lines">' + _this._('Lines') + '</option> \
-              <option value="points">' + _this._('Points') + '</option> \
-              <option value="bars">' + _this._('Bars') + '</option> \
-              <option value="columns">' + _this._('Columns') + '</option> \
+              <option value="lines-and-points">' + _i18n._('Lines and Points') + '</option> \
+              <option value="lines">' + _i18n._('Lines') + '</option> \
+              <option value="points">' + _i18n._('Points') + '</option> \
+              <option value="bars">' + _i18n._('Bars') + '</option> \
+              <option value="columns">' + _i18n._('Columns') + '</option> \
             </select> \
           </div> \
         </div> \
         <div class="form-group"> \
-          <label>' + _this._('Group Column (Axis 1)') + '</label> \
+          <label>' + _i18n._('Group Column (Axis 1)') + '</label> \
           <div class="input editor-group"> \
             <select class="form-control"> \
-              <option value="">' + _this._('Please choose ...') + '</option> \
+              <option value="">' + _i18n._('Please choose ...') + '</option> \
                 {{#fields}} \
               <option value="{{id}}">{{label}}</option> \
                 {{/fields}} \
@@ -1433,10 +1433,10 @@ my.FlotControls = Backbone.View.extend({
         </div> \
       </div> \
       <div class="editor-buttons"> \
-        <button class="btn btn-default editor-add">' + _this._('Add Series ...') + '</button> \
+        <button class="btn btn-default editor-add">' + _i18n._('Add Series ...') + '</button> \
       </div> \
       <div class="editor-buttons editor-submit" comment="hidden temporarily" style="display: none;"> \
-        <button class="editor-save">' + _this._('Save') + '</button> \
+        <button class="editor-save">' + _i18n._('Save') + '</button> \
         <input type="hidden" class="editor-id" value="chart-1" /> \
       </div> \
     </form> \
@@ -1445,8 +1445,8 @@ my.FlotControls = Backbone.View.extend({
   templateSeriesEditor: ' \
     <div class="editor-series js-series-{{seriesIndex}}"> \
       <div class="form-group"> \
-        <label>' + _this._('Series') + ' <span>{{seriesName}} (' + _this._('Axis 2') + ')</span> \
-          [<a href="#remove" class="action-remove-series">' + _this._('Remove') + '</a>] \
+        <label>' + _i18n._('Series') + ' <span>{{seriesName}} (' + _i18n._('Axis 2') + ')</span> \
+          [<a href="#remove" class="action-remove-series">' + _i18n._('Remove') + '</a>] \
         </label> \
         <div class="input"> \
           <select class="form-control"> \
@@ -1779,8 +1779,8 @@ my.GridRow = Backbone.View.extend({
       <textarea class="data-table-cell-editor-editor" bind="textarea">{{value}}</textarea> \
       <div id="data-table-cell-editor-actions"> \
         <div class="data-table-cell-editor-action"> \
-          <button class="okButton btn primary">' + _this._('Update') + '</button> \
-          <button class="cancelButton btn danger">' + _this._('Cancel') + '</button> \
+          <button class="okButton btn primary">' + _i18n._('Update') + '</button> \
+          <button class="cancelButton btn danger">' + _i18n._('Cancel') + '</button> \
         </div> \
       </div> \
     </div> \
@@ -2342,11 +2342,11 @@ my.MapMenu = Backbone.View.extend({
       <div class="clearfix"> \
         <div class="editor-field-type"> \
             <label class="radio"> \
-              <input type="radio" id="editor-field-type-latlon" name="editor-field-type" value="latlon" checked="checked"/>' + _this._('Latitude / Longitude fields') + '</label> \
-            <label class="radio"><input type="radio" id="editor-field-type-geom" name="editor-field-type" value="geom" />' + _this._('GeoJSON field') + '</label> \
+              <input type="radio" id="editor-field-type-latlon" name="editor-field-type" value="latlon" checked="checked"/>' + _i18n._('Latitude / Longitude fields') + '</label> \
+            <label class="radio"><input type="radio" id="editor-field-type-geom" name="editor-field-type" value="geom" />' + _i18n._('GeoJSON field') + '</label> \
         </div> \
         <div class="editor-field-type-latlon"> \
-          <label>' + _this._('Latitude field') + '</label> \
+          <label>' + _i18n._('Latitude field') + '</label> \
           <div class="input editor-lat-field"> \
             <select class="form-control"> \
             <option value=""></option> \
@@ -2355,7 +2355,7 @@ my.MapMenu = Backbone.View.extend({
             {{/fields}} \
             </select> \
           </div> \
-          <label>' + _this._('Longitude field') + '</label> \
+          <label>' + _i18n._('Longitude field') + '</label> \
           <div class="input editor-lon-field"> \
             <select class="form-control"> \
             <option value=""></option> \
@@ -2366,7 +2366,7 @@ my.MapMenu = Backbone.View.extend({
           </div> \
         </div> \
         <div class="editor-field-type-geom" style="display:none"> \
-          <label>' + _this._('Geometry field (GeoJSON)') + '</label> \
+          <label>' + _i18n._('Geometry field (GeoJSON)') + '</label> \
           <div class="input editor-geom-field"> \
             <select class="form-control"> \
             <option value=""></option> \
@@ -2378,11 +2378,11 @@ my.MapMenu = Backbone.View.extend({
         </div> \
       </div> \
       <div class="editor-buttons"> \
-        <button class="btn btn-default editor-update-map">' + _this._('Update') + '</button> \
+        <button class="btn btn-default editor-update-map">' + _i18n._('Update') + '</button> \
       </div> \
       <div class="editor-options" > \
-        <label class="checkbox"><input type="checkbox" id="editor-auto-zoom" value="autozoom" checked="checked" />' + _this._('Auto zoom to features') + '</label> \
-        <label class="checkbox"><input type="checkbox" id="editor-cluster" value="cluster"/>' + _this._('Cluster markers') + '</label> \
+        <label class="checkbox"><input type="checkbox" id="editor-auto-zoom" value="autozoom" checked="checked" />' + _i18n._('Auto zoom to features') + '</label> \
+        <label class="checkbox"><input type="checkbox" id="editor-cluster" value="cluster"/>' + _i18n._('Cluster markers') + '</label> \
       </div> \
       <input type="hidden" class="editor-id" value="map-1" /> \
     </form> \
@@ -3118,7 +3118,7 @@ my.SlickGrid = Backbone.View.extend({
 
     // Template for row delete menu , change it if you don't love
     this.templates = {
-      "deleterow" : '<button href="#" class="recline-row-delete btn btn-default" title="' + _this._('Delete row') + '">X</button>'
+      "deleterow" : '<button href="#" class="recline-row-delete btn btn-default" title="' + _i18n._('Delete row') + '">X</button>'
     };
 
     _.bindAll(this, 'render', 'onRecordChanged');
@@ -3507,7 +3507,7 @@ my.SlickGrid = Backbone.View.extend({
 my.GridControl= Backbone.View.extend({
   className: "recline-row-add",
   // Template for row edit menu , change it if you don't love
-  template: '<h1><button href="#" class="recline-row-add btn btn-default">' + _this._('Add row') + '</button></h1>',
+  template: '<h1><button href="#" class="recline-row-add btn btn-default">' + _i18n._('Add row') + '</button></h1>',
 
   initialize: function(options){
     var self = this;
@@ -4040,11 +4040,11 @@ my.FilterEditor = Backbone.View.extend({
   className: 'recline-filter-editor well',
   template: ' \
     <div class="filters"> \
-      <h3>' + _this._('Filters') + '</h3> \
-      <a href="#" class="js-add-filter">' + _this._('Add filter') + '</a> \
+      <h3>' + _i18n._('Filters') + '</h3> \
+      <a href="#" class="js-add-filter">' + _i18n._('Add filter') + '</a> \
       <form class="form-stacked js-add" style="display: none;"> \
         <div class="form-group"> \
-          <label>' + _this._('Field') + '</label> \
+          <label>' + _i18n._('Field') + '</label> \
           <select class="fields form-control"> \
             {{#fields}} \
             <option value="{{id}}">{{label}}</option> \
@@ -4052,11 +4052,11 @@ my.FilterEditor = Backbone.View.extend({
           </select> \
         </div> \
         <div class="form-group"> \
-          <label>' + _this._('Filter type') + '</label> \
+          <label>' + _i18n._('Filter type') + '</label> \
           <select class="filterType form-control"> \
-            <option value="term">' + _this._('Value') + '</option> \
-            <option value="range">' + _this._('Range') + '</option> \
-            <option value="geo_distance">' + _this._('Geo distance') + '</option> \
+            <option value="term">' + _i18n._('Value') + '</option> \
+            <option value="range">' + _i18n._('Range') + '</option> \
+            <option value="geo_distance">' + _i18n._('Geo distance') + '</option> \
           </select> \
         </div> \
         <button type="submit" class="btn btn-default">Add</button> \
@@ -4066,7 +4066,7 @@ my.FilterEditor = Backbone.View.extend({
           {{{filterRender}}} \
         {{/filters}} \
         {{#filters.length}} \
-        <button type="submit" class="btn btn-default">' + _this._('Update') + '</button> \
+        <button type="submit" class="btn btn-default">' + _i18n._('Update') + '</button> \
         {{/filters.length}} \
       </form> \
     </div> \
@@ -4077,7 +4077,7 @@ my.FilterEditor = Backbone.View.extend({
         <fieldset> \
           <legend> \
             {{field}} <small>{{type}}</small> \
-            <a class="js-remove-filter" href="#" title="' + _this._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
+            <a class="js-remove-filter" href="#" title="' + _i18n._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
           </legend> \
           <input class="input-sm" type="text" value="{{term}}" name="term" data-filter-field="{{field}}" data-filter-id="{{id}}" data-filter-type="{{type}}" /> \
         </fieldset> \
@@ -4088,7 +4088,7 @@ my.FilterEditor = Backbone.View.extend({
         <fieldset> \
           <legend> \
             {{field}} <small>{{type}}</small> \
-            <a class="js-remove-filter" href="#" title="' + _this._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
+            <a class="js-remove-filter" href="#" title="' + _i18n._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
           </legend> \
           <div class="form-group"> \
             <label class="control-label" for="">From</label> \
@@ -4106,18 +4106,18 @@ my.FilterEditor = Backbone.View.extend({
         <fieldset> \
           <legend> \
             {{field}} <small>{{type}}</small> \
-            <a class="js-remove-filter" href="#" title="' + _this._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
+            <a class="js-remove-filter" href="#" title="' + _i18n._('Remove this filter') + '" data-filter-id="{{id}}">&times;</a> \
           </legend> \
           <div class="form-group"> \
-            <label class="control-label" for="">' + _this._('Longitude') + '</label> \
+            <label class="control-label" for="">' + _i18n._('Longitude') + '</label> \
             <input class="input-sm" type="text" value="{{point.lon}}" name="lon" data-filter-field="{{field}}" data-filter-id="{{id}}" data-filter-type="{{type}}" /> \
           </div> \
           <div class="form-group"> \
-            <label class="control-label" for="">' + _this._('Latitude') + '</label> \
+            <label class="control-label" for="">' + _i18n._('Latitude') + '</label> \
             <input class="input-sm" type="text" value="{{point.lat}}" name="lat" data-filter-field="{{field}}" data-filter-id="{{id}}" data-filter-type="{{type}}" /> \
           </div> \
           <div class="form-group"> \
-            <label class="control-label" for="">' + _this._('Distance (km)') + '</label> \
+            <label class="control-label" for="">' + _i18n._('Distance (km)') + '</label> \
             <input class="input-sm" type="text" value="{{distance}}" name="distance" data-filter-field="{{field}}" data-filter-id="{{id}}" data-filter-type="{{type}}" /> \
           </div> \
         </fieldset> \
@@ -4300,11 +4300,11 @@ my.QueryEditor = Backbone.View.extend({
           <div class="input-group-addon"> \
             <i class="glyphicon glyphicon-search"></i> \
           </div> \
-          <label for="q">' + _this._('Search') + '</label> \
-          <input class="form-control search-query" type="text" id="q" name="q" value="{{q}}" placeholder="' + _this._('Search data ...') + '"> \
+          <label for="q">' + _i18n._('Search') + '</label> \
+          <input class="form-control search-query" type="text" id="q" name="q" value="{{q}}" placeholder="' + _i18n._('Search data ...') + '"> \
         </div> \
       </div> \
-      <button type="submit" class="btn btn-default">' + _this._('Go') + ' &raquo;</button> \
+      <button type="submit" class="btn btn-default">' + _i18n._('Go') + ' &raquo;</button> \
     </form> \
   ',
 
@@ -4343,17 +4343,17 @@ my.ValueFilter = Backbone.View.extend({
   className: 'recline-filter-editor well',
   template: ' \
     <div class="filters"> \
-      <h3>' + _this._('Filters') + '</h3> \
-      <button class="btn js-add-filter add-filter">' + _this._('Add filter') + '</button> \
+      <h3>' + _i18n._('Filters') + '</h3> \
+      <button class="btn js-add-filter add-filter">' + _i18n._('Add filter') + '</button> \
       <form class="form-stacked js-add" style="display: none;"> \
         <fieldset> \
-          <label>' + _this._('Field') + '</label> \
+          <label>' + _i18n._('Field') + '</label> \
           <select class="fields form-control"> \
             {{#fields}} \
             <option value="{{id}}">{{label}}</option> \
             {{/fields}} \
           </select> \
-          <button type="submit" class="btn">' + _this._('Add') + '</button> \
+          <button type="submit" class="btn">' + _i18n._('Add') + '</button> \
         </fieldset> \
       </form> \
       <form class="form-stacked js-edit"> \
@@ -4361,7 +4361,7 @@ my.ValueFilter = Backbone.View.extend({
           {{{filterRender}}} \
         {{/filters}} \
         {{#filters.length}} \
-        <button type="submit" class="btn update-filter">' + _this._('Update') + '</button> \
+        <button type="submit" class="btn update-filter">' + _i18n._('Update') + '</button> \
         {{/filters.length}} \
       </form> \
     </div> \
