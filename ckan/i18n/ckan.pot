@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckan 2.7.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-07 11:47+0000\n"
+"POT-Creation-Date: 2018-03-07 14:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4161,6 +4161,10 @@ msgstr ""
 msgid "Not Uploaded Yet"
 msgstr ""
 
+#: ckanext/datapusher/logic/action.py:292
+msgid "cannot connect to datapusher"
+msgstr ""
+
 #: ckanext/datapusher/templates/datapusher/resource_data.html:12
 msgid "Upload to DataStore"
 msgstr ""
@@ -4619,6 +4623,18 @@ msgstr ""
 msgid "Field type"
 msgstr ""
 
+#: ckanext/resourceproxy/controller.py:74
+msgid "Could not proxy resource. Server responded with {} {}"
+msgstr ""
+
+#: ckanext/resourceproxy/controller.py:78
+msgid "Could not proxy resource because a connection error occurred. {}"
+msgstr ""
+
+#: ckanext/resourceproxy/controller.py:82
+msgid "Could not proxy resource because the connection timed out."
+msgstr ""
+
 #: ckanext/stats/templates/ckanext/stats/index.html:10
 msgid "Total number of Datasets"
 msgstr ""
@@ -4717,11 +4733,6 @@ msgstr ""
 
 #: ckanext/textview/plugin.py:67 ckanext/textview/plugin.py:69
 msgid "Text"
-msgstr ""
-
-#: ckanext/textview/theme/public/text_view.js:70
-#, python-format
-msgid "An error occurred: %(text)s %(error)s"
 msgstr ""
 
 #: ckanext/webpageview/plugin.py:21 ckanext/webpageview/plugin.py:26
