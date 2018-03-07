@@ -193,11 +193,7 @@ class DatastorePlugin(p.SingletonPlugin):
                 'resource_id': res.id,
             })
             res.extras['datastore_active'] = False
-<<<<<<< 3a7d20da2ffd16c99588132f601e9125511693c3
             res_query.filter_by(id=res.id).update(
-=======
-            query.update(
->>>>>>> Fixed bug on delete resource (bad querySet)
                 {'extras': res.extras}, synchronize_session=False)
 
     # IDatastore
