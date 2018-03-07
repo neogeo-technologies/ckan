@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckan 2.7.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-05 16:31+0000\n"
+"POT-Creation-Date: 2018-03-07 11:47+0000\n"
 "PO-Revision-Date: 2018-03-05 16:36+0100\n"
 "Last-Translator: Steve King <steve.king@kimepe.com>, 2017\n"
 "Language: fr\n"
@@ -1919,7 +1919,7 @@ msgstr "Confirmation"
 #: ckan/templates/organization/confirm_delete_member.html:15
 #: ckan/templates/package/confirm_delete.html:15
 #: ckan/templates/package/confirm_delete_resource.html:14
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1783
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1782
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -1957,7 +1957,7 @@ msgstr "Envoi"
 #: ckan/templates/group/snippets/group_item.html:43
 #: ckan/templates/macros/form.html:235
 #: ckan/templates/snippets/search_form.html:68
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1449
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1448
 msgid "Remove"
 msgstr "Supprimer"
 
@@ -2174,7 +2174,7 @@ msgstr "Rechercher des jeux de données"
 #: ckan/templates/header.html:117 ckan/templates/home/snippets/search.html:11
 #: ckan/templates/snippets/simple_search.html:5
 #: ckan/templates/user/snippets/user_search.html:6
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4303
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4302
 msgid "Search"
 msgstr "Rechercher"
 
@@ -2628,7 +2628,7 @@ msgstr "Supprimer"
 
 #: ckan/templates/group/member_new.html:60
 #: ckanext/datastore/templates/datastore/dictionary.html:33
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1439
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1438
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -3241,10 +3241,10 @@ msgid "Preview"
 msgstr "Aperçu"
 
 #: ckan/templates/package/edit_view.html:21
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1782
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2381
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4069
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4364
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1781
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2380
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4068
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4363
 msgid "Update"
 msgstr "Mise à jour"
 
@@ -3306,7 +3306,8 @@ msgstr ""
 
 #: ckan/templates/package/new_view.html:29
 #: ckan/templates/package/snippets/resource_form.html:81
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4356
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4061
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4355
 msgid "Add"
 msgstr "Ajouter"
 
@@ -3409,15 +3410,15 @@ msgstr "Informations additionnelles"
 #: ckan/templates/package/snippets/additional_info.html:6
 #: ckan/templates/revision/diff.html:43
 #: ckan/templates/snippets/additional_info.html:11
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4047
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4350
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4046
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4349
 msgid "Field"
 msgstr "Champ"
 
 #: ckan/templates/package/resource_read.html:149
 #: ckan/templates/package/snippets/additional_info.html:7
 #: ckan/templates/snippets/additional_info.html:12
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4057
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4056
 msgid "Value"
 msgstr "Valeur"
 
@@ -3837,8 +3838,8 @@ msgstr "Supprimer un filtre"
 #: ckan/templates/package/snippets/view_form_filters.html:46
 #: ckanext/reclineview/theme/public/recline_view.js:215
 #: ckanext/reclineview/theme/public/recline_view.min.js:14
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4043
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4346
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4042
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4345
 msgid "Filters"
 msgstr "Filtres"
 
@@ -3948,7 +3949,7 @@ msgstr "Langue"
 #: ckan/templates/snippets/search_form.html:41
 #: ckan/templates/snippets/simple_search.html:15
 #: ckan/templates/snippets/sort_by.html:22
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4307
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4306
 msgid "Go"
 msgstr "Go"
 
@@ -4711,143 +4712,143 @@ msgstr "DataProxy a retourné une erreur"
 msgid "Grid"
 msgstr "Grille"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1069
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1068
 msgid "Hey there!"
-msgstr "Bonjour !"
+msgstr "Bonjour,"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1070
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1069
 msgid ""
 "There's no graph here yet because we don't know what fields you'd like to"
 " see plotted."
 msgstr "Avant d'afficher un graphique il faut choisir les champs à utiliser."
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1071
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1070
 msgid ""
 "Please tell us by <strong>using the menu on the right</strong> and a "
 "graph will automatically appear."
 msgstr "Merci de les sélectionner dans le <strong>menu de droite</strong>."
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1410
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1409
 msgid "Graph Type"
-msgstr "Type de graphes"
+msgstr "Type de graphe"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1413
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1412
 msgid "Lines and Points"
 msgstr "Lignes et points"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1414
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1413
 msgid "Lines"
 msgstr "Lignes"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1415
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1414
 msgid "Points"
 msgstr "Points"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1416
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1415
 msgid "Bars"
-msgstr "Histogramme"
+msgstr "Barres"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1417
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1416
 msgid "Columns"
 msgstr "Colonnes"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1422
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1421
 msgid "Group Column (Axis 1)"
 msgstr "Colonne (Axe 1)"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1425
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1424
 msgid "Please choose ..."
 msgstr "Choisir"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1436
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1435
 msgid "Add Series ..."
 msgstr "Ajouter une série de données"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1448
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1447
 msgid "Series"
 msgstr "Séries de données"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1448
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:1447
 msgid "Axis 2"
-msgstr "2e axe"
+msgstr "Axe 2"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2345
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2344
 msgid "Latitude / Longitude fields"
 msgstr "Latitude/longitude"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2346
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2345
 #: ckanext/reclineview/theme/templates/recline_map_form.html:9
 msgid "GeoJSON field"
 msgstr "Champ GeoJSON"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2349
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2348
 #: ckanext/reclineview/theme/templates/recline_map_form.html:7
 msgid "Latitude field"
 msgstr "Champ de latitude"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2358
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2357
 #: ckanext/reclineview/theme/templates/recline_map_form.html:8
 msgid "Longitude field"
 msgstr "Champ de longitude"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2369
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2368
 msgid "Geometry field (GeoJSON)"
-msgstr "Champ géométrique"
+msgstr "Géométrie (GeoJSON)"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2384
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2383
 #: ckanext/reclineview/theme/templates/recline_map_form.html:10
 msgid "Auto zoom to features"
-msgstr "Zoom automatique aux fonctionnalités"
+msgstr "Zoom automatique sur les objects"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2385
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:2384
 #: ckanext/reclineview/theme/templates/recline_map_form.html:11
 msgid "Cluster markers"
 msgstr "Marqueurs de regroupement"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:3121
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:3120
 msgid "Delete row"
 msgstr "Supprimer la ligne"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:3510
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:3509
 msgid "Add row"
 msgstr "Ajouter une ligne"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4044
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4347
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4043
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4346
 msgid "Add filter"
 msgstr "Ajouter un filtre"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4055
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4054
 msgid "Filter type"
 msgstr "Type de filtre"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4058
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4057
 msgid "Range"
 msgstr "Plage de valeur"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4059
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4058
 msgid "Geo distance"
 msgstr "Distance"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4080
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4091
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4109
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4079
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4090
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4108
 msgid "Remove this filter"
-msgstr "Supprimer un filtre"
+msgstr "Supprimer le filtre"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4112
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4111
 msgid "Longitude"
 msgstr "Longitude"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4116
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4115
 msgid "Latitude"
 msgstr "Latitude"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4120
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4119
 msgid "Distance (km)"
 msgstr "Distance (km)"
 
-#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4304
+#: ckanext/reclineview/theme/public/vendor/recline/recline.js:4303
 msgid "Search data ..."
 msgstr "Rechercher..."
 
