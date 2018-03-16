@@ -158,6 +158,7 @@ class GroupController(base.BaseController):
 
         q = c.q = request.params.get('q', '')
         sort_by = c.sort_by_selected = request.params.get('sort')
+        view_mode = c.view_mode = request.params.get('view_mode')
         try:
             self._check_access('site_read', context)
             self._check_access('group_list', context)
@@ -176,6 +177,7 @@ class GroupController(base.BaseController):
                 'q': q,
                 'sort': sort_by,
                 'type': group_type or 'group',
+                'view_mode': view_mode
             }
             global_results = self._action('group_list')(
                 context, data_dict_global_results)
@@ -196,7 +198,8 @@ class GroupController(base.BaseController):
             'type': group_type or 'group',
             'limit': items_per_page,
             'offset': items_per_page * (page - 1),
-            'include_extras': True
+            'include_extras': True,
+            'view_mode': view_mode
         }
         page_results = self._action('group_list')(context,
                                                   data_dict_page_results)
