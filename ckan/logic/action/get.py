@@ -2014,7 +2014,7 @@ def package_search(context, data_dict):
                     display_name = u"Hebdomadaire"
                 elif key_ == 'monthly':
                     display_name = u"Mensuelle"
-                elif key_ == 'quaterly':
+                elif key_ == 'quarterly':
                     display_name = u"Trimestrielle"
                 elif key_ == 'annual':
                     display_name = u"Annuelle"
