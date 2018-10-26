@@ -1868,7 +1868,7 @@ def package_search(context, data_dict):
 
     if data_dict.get('sort') in (None, 'rank'):
         #data_dict['sort'] = 'score desc, metadata_modified desc'
-        data_dict['sort'] = 'views_recent desc'
+        data_dict['sort'] = 'metadata_modified desc'
 
     results = []
     if not abort:
@@ -1978,9 +1978,66 @@ def package_search(context, data_dict):
                     new_facet_dict['display_name'] = license.title
                 else:
                     new_facet_dict['display_name'] = key_
+            elif key == 'support':
+                if key_ == 'region-paca':
+                    display_name = u"Région Sud"
+                elif key_ == 'crige-paca':
+                    display_name = "CRIGE PACA"
+                else:
+                    display_name = key_
+                new_facet_dict['display_name'] = display_name
+            elif key == 'datatype':
+                if key_ == 'donnees-intelligentes':
+                    display_name = u"Données intelligentes"
+                elif key_ == 'donnees-ouvertes':
+                    display_name = u"Données ouvertes"
+                elif key_ == 'donnees-geographiques':
+                    display_name = u"Données géographiques"
+                else:
+                    display_name = key_
+                new_facet_dict['display_name'] = display_name
+
+            elif key == 'update_frequency':
+                if key_ == 'asneeded':
+                    display_name = u"Lorsque nécessaire"
+                elif key_ == 'never':
+                    display_name = u"Non plannifiée"
+                elif key_ == 'intermittently':
+                    display_name = u"Irrégulière"
+                elif key_ == 'continuously':
+                    display_name = u"Continue"
+                elif key_ == 'realtime':
+                    display_name = u"Temps réel"
+                elif key_ == 'daily':
+                    display_name = u"Journalière"
+                elif key_ == 'weekly':
+                    display_name = u"Hebdomadaire"
+                elif key_ == 'monthly':
+                    display_name = u"Mensuelle"
+                elif key_ == 'quaterly':
+                    display_name = u"Trimestrielle"
+                elif key_ == 'annual':
+                    display_name = u"Annuelle"
+                elif key_ == 'semiannuel':
+                    display_name = u"Bi-annuelle"
+                elif key_ == 'unknow':
+                    display_name = u"Inconnue"
+                new_facet_dict['display_name'] = display_name
+
+            elif key == 'granularity':
+                if key_ == 'commune-francaise':
+                    display_name = u"Commune"
+                if key_ == 'departement-francais':
+                    display_name = u"Département"
+                if key_ == 'region-francaise':
+                    display_name = u"Région"
+                new_facet_dict['display_name'] = display_name
+
             else:
                 new_facet_dict['display_name'] = key_
             new_facet_dict['count'] = value_
+
+
             restructured_facets[key]['items'].append(new_facet_dict)
     search_results['search_facets'] = restructured_facets
 
