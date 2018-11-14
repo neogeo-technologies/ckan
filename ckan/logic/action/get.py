@@ -2025,12 +2025,22 @@ def package_search(context, data_dict):
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'granularity':
-                if key_ == 'commune-francaise':
-                    display_name = u"Commune"
-                if key_ == 'departement-francais':
-                    display_name = u"Département"
-                if key_ == 'region-francaise':
+                if key_ == 'indefinie':
+                    display_name = u"Indéfinie"
+                if key_ == 'region':
                     display_name = u"Région"
+                if key_ == 'departement':
+                    display_name = u"Département"
+                if key_ == 'epci':
+                    display_name = u"Intercommunalité (EPCI)"
+                if key_ == 'commune':
+                    display_name = u"Commune"
+                if key_ == 'iris':
+                    display_name = u"IRIS (quartiers INSEE)"
+                if key_ == 'parcelle-cadastrale':
+                    display_name = u"Parcelle cadastrale"
+                if key_ == 'poi':
+                    display_name = u"Point d’interêt (POI)"
                 new_facet_dict['display_name'] = display_name
 
             else:
