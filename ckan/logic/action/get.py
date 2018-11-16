@@ -1581,6 +1581,9 @@ def package_autocomplete(context, data_dict):
 
     like_q = u"%s%%" % q
 
+    orga = data_dict.get('organization', '')
+    organization = model.Group.get(orga)
+
     query = model.Session.query(model.Package)
     query = query.filter(model.Package.state == 'active')
     query = query.filter(model.Package.private == False)
@@ -1591,6 +1594,9 @@ def package_autocomplete(context, data_dict):
     q_lower = q.lower()
     pkg_list = []
     for package in query:
+        if organization and organization.is_organization:
+            if not package.is_in_group(organization):
+                continue
         if package.name.startswith(q_lower):
             match_field = 'name'
             match_displayed = package.name
