@@ -580,7 +580,8 @@ def default_activity_list_schema():
 def default_autocomplete_schema():
     schema = {
         'q': [not_missing, unicode],
-        'limit': [ignore_missing, natural_number_validator]
+        'limit': [ignore_missing, natural_number_validator],
+        'organization': [ignore_missing, unicode]
     }
     return schema
 
