@@ -17,5 +17,6 @@ $(function (){
             complete : function () {location.href = url;},
             timeout : 30});
     e.preventDefault();
+    return false;
   });
 });
