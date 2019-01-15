@@ -15,7 +15,7 @@ $(function (){
             data : {url:url, type:'resource'},
             type : 'POST',
             complete : function () {location.href = url;},
-            timeout : 30});
+            timeout : 30000});
     e.preventDefault();
     return false;
   });
