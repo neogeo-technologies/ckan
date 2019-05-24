@@ -2003,7 +2003,7 @@ def package_search(context, data_dict):
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
 
-            elif key == 'update_frequency':
+            elif key == 'frequency':
                 if key_ == 'asneeded':
                     display_name = u"Lorsque nécessaire"
                 elif key_ == 'never':
@@ -2018,6 +2018,8 @@ def package_search(context, data_dict):
                     display_name = u"Journalière"
                 elif key_ == 'weekly':
                     display_name = u"Hebdomadaire"
+                elif key_ == 'fortnightly':
+                    display_name = u"Bi-mensuelle"
                 elif key_ == 'monthly':
                     display_name = u"Mensuelle"
                 elif key_ == 'quarterly':
@@ -2026,7 +2028,7 @@ def package_search(context, data_dict):
                     display_name = u"Annuelle"
                 elif key_ == 'semiannuel':
                     display_name = u"Bi-annuelle"
-                elif key_ == 'unknow':
+                elif key_ == 'unknown':
                     display_name = u"Inconnue"
                 new_facet_dict['display_name'] = display_name
 
@@ -2052,7 +2054,6 @@ def package_search(context, data_dict):
             else:
                 new_facet_dict['display_name'] = key_
             new_facet_dict['count'] = value_
-
 
             restructured_facets[key]['items'].append(new_facet_dict)
     search_results['search_facets'] = restructured_facets
