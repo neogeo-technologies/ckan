@@ -103,7 +103,7 @@ class ReclineView(ReclineViewBase):
 
     def info(self):
         return {'name': 'recline_view',
-                'title': 'Data Explorer',
+                'title': p.toolkit._('Data Explorer'),
                 'filterable': True,
                 'icon': 'table',
                 'requires_datastore': False,
@@ -130,7 +130,7 @@ class ReclineGridView(ReclineViewBase):
 
     def info(self):
         return {'name': 'recline_grid_view',
-                'title': 'Grid',
+                'title': p.toolkit._('Table'),
                 'filterable': True,
                 'icon': 'table',
                 'requires_datastore': True,
@@ -152,7 +152,7 @@ class ReclineGraphView(ReclineViewBase):
 
     datastore_fields = []
 
-    datastore_field_types = ['numeric', 'int4', 'timestamp']
+    datastore_field_types = ['boolean', 'numeric', 'int4', 'timestamp', 'text']
 
     def list_graph_types(self):
         return [t['value'] for t in self.graph_types]
@@ -172,7 +172,7 @@ class ReclineGraphView(ReclineViewBase):
             'series': [ignore_empty, in_list(self.list_datastore_fields)]
         }
         return {'name': 'recline_graph_view',
-                'title': 'Graph',
+                'title': p.toolkit._('Graph'),
                 'filterable': True,
                 'icon': 'bar-chart-o',
                 'requires_datastore': True,
@@ -201,7 +201,6 @@ class ReclineMapView(ReclineViewBase):
     map_field_types = [{'value': 'lat_long',
                         'text': 'Latitude / Longitude fields'},
                        {'value': 'geojson', 'text': 'GeoJSON'}]
-
     datastore_fields = []
 
     datastore_field_latlon_types = ['numeric']
@@ -233,7 +232,7 @@ class ReclineMapView(ReclineViewBase):
             'cluster_markers': [ignore_empty]
         }
         return {'name': 'recline_map_view',
-                'title': 'Map',
+                'title': p.toolkit._('Map'),
                 'schema': schema,
                 'filterable': True,
                 'icon': 'map-marker',

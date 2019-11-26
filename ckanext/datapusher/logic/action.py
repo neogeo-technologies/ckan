@@ -296,7 +296,7 @@ def datapusher_status(context, data_dict):
             job_detail = r.json()
         except (requests.exceptions.ConnectionError,
                 requests.exceptions.HTTPError):
-            job_detail = {'error': 'cannot connect to datapusher'}
+            job_detail = {'error': _('cannot connect to datapusher')}
 
     return {
         'status': task['state'],

@@ -1581,6 +1581,9 @@ def package_autocomplete(context, data_dict):
 
     like_q = u"%s%%" % q
 
+    orga = data_dict.get('organization', '')
+    organization = model.Group.get(orga)
+
     query = model.Session.query(model.Package)
     query = query.filter(model.Package.state == 'active')
     query = query.filter(model.Package.private == False)
@@ -1591,6 +1594,9 @@ def package_autocomplete(context, data_dict):
     q_lower = q.lower()
     pkg_list = []
     for package in query:
+        if organization and organization.is_organization:
+            if not package.is_in_group(organization):
+                continue
         if package.name.startswith(q_lower):
             match_field = 'name'
             match_displayed = package.name
@@ -1867,7 +1873,8 @@ def package_search(context, data_dict):
     abort = data_dict.get('abort_search', False)
 
     if data_dict.get('sort') in (None, 'rank'):
-        data_dict['sort'] = 'score desc, metadata_modified desc'
+        #data_dict['sort'] = 'score desc, metadata_modified desc'
+        data_dict['sort'] = 'metadata_modified desc'
 
     results = []
     if not abort:
@@ -1977,9 +1984,77 @@ def package_search(context, data_dict):
                     new_facet_dict['display_name'] = license.title
                 else:
                     new_facet_dict['display_name'] = key_
+            elif key == 'support':
+                if key_ == 'region-paca':
+                    display_name = u"Région Sud"
+                elif key_ == 'crige-paca':
+                    display_name = "CRIGE PACA"
+                else:
+                    display_name = key_
+                new_facet_dict['display_name'] = display_name
+            elif key == 'datatype':
+                if key_ == 'donnees-intelligentes':
+                    display_name = u"Données intelligentes"
+                elif key_ == 'donnees-ouvertes':
+                    display_name = u"Données ouvertes"
+                elif key_ == 'donnees-geographiques':
+                    display_name = u"Données géographiques"
+                else:
+                    display_name = key_
+                new_facet_dict['display_name'] = display_name
+
+            elif key == 'frequency':
+                if key_ == 'asneeded':
+                    display_name = u"Lorsque nécessaire"
+                elif key_ == 'never':
+                    display_name = u"Non plannifiée"
+                elif key_ == 'intermittently':
+                    display_name = u"Irrégulière"
+                elif key_ == 'continuously':
+                    display_name = u"Continue"
+                elif key_ == 'realtime':
+                    display_name = u"Temps réel"
+                elif key_ == 'daily':
+                    display_name = u"Journalière"
+                elif key_ == 'weekly':
+                    display_name = u"Hebdomadaire"
+                elif key_ == 'fortnightly':
+                    display_name = u"Bi-mensuelle"
+                elif key_ == 'monthly':
+                    display_name = u"Mensuelle"
+                elif key_ == 'quarterly':
+                    display_name = u"Trimestrielle"
+                elif key_ == 'annual':
+                    display_name = u"Annuelle"
+                elif key_ == 'semiannuel':
+                    display_name = u"Bi-annuelle"
+                elif key_ == 'unknown':
+                    display_name = u"Inconnue"
+                new_facet_dict['display_name'] = display_name
+
+            elif key == 'granularity':
+                if key_ == 'indefinie':
+                    display_name = u"Indéfinie"
+                if key_ == 'region':
+                    display_name = u"Région"
+                if key_ == 'departement':
+                    display_name = u"Département"
+                if key_ == 'epci':
+                    display_name = u"Intercommunalité (EPCI)"
+                if key_ == 'commune':
+                    display_name = u"Commune"
+                if key_ == 'iris':
+                    display_name = u"IRIS (quartiers INSEE)"
+                if key_ == 'parcelle-cadastrale':
+                    display_name = u"Parcelle cadastrale"
+                if key_ == 'poi':
+                    display_name = u"Point d’interêt (POI)"
+                new_facet_dict['display_name'] = display_name
+
             else:
                 new_facet_dict['display_name'] = key_
             new_facet_dict['count'] = value_
+
             restructured_facets[key]['items'].append(new_facet_dict)
     search_results['search_facets'] = restructured_facets
 
