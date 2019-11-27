@@ -4456,7 +4456,13 @@ my.ValueFilter = Backbone.View.extend({
 
     this.model.records.forEach(function(record) {
       let row = head.map(function(key) {
-        return record.attributes[key];
+        let value = record.attributes[key];
+        value = value === null ? '' : value.toString();
+        value = value.replace(/"/g, '""');
+        if (value.search(/("|;|\n)/g) >= 0) {
+          value = '"' + value + '"';
+        };
+        return value;
       })
       content += row.join(';') + '\r\n';
     });
