@@ -4363,6 +4363,9 @@ my.ValueFilter = Backbone.View.extend({
         <button type="submit" class="btn update-filter">Mettre à jour</button> \
         {{/filters.length}} \
       </form> \
+      <form class="form-stacked js-download"> \
+        <button type="submit" class="btn download-filter">Télécharger</button\
+      </form> \
     </div> \
   ',
   filterTemplates: {
@@ -4380,7 +4383,8 @@ my.ValueFilter = Backbone.View.extend({
     'click .js-remove-filter': 'onRemoveFilter',
     'click .js-add-filter': 'onAddFilterShow',
     'submit form.js-edit': 'onTermFiltersUpdate',
-    'submit form.js-add': 'onAddFilter'
+    'submit form.js-add': 'onAddFilter',
+    'submit form.js-download': 'onDownloadFilter',
   },
   initialize: function() {
     _.bindAll(this, 'render');
@@ -4440,7 +4444,44 @@ my.ValueFilter = Backbone.View.extend({
     });
     self.model.queryState.set({filters: filters, from: 0});
     self.model.queryState.trigger('change');
-  }
+  },
+  onDownloadFilter: function(e) {
+    e.preventDefault();
+
+    const head = this.model.fields.map(function(field) {
+      return field.id
+    });
+
+    let content = head.join(';') + '\r\n';
+
+    this.model.records.forEach(function(record) {
+      let row = head.map(function(key) {
+        return record.attributes[key];
+      })
+      content += row.join(';') + '\r\n';
+    });
+
+    const blob = new Blob([content], {
+      type: 'text/csv;charset=utf-8;'
+    });
+
+    const filename = this.model.attributes.name || 'data.csv';
+
+    if (navigator.msSaveBlob) {
+      navigator.msSaveBlob(blob, filename);
+    } else {
+      const link = document.createElement('a');
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+    };
+  },
 });
 
 })(jQuery, recline.View);
