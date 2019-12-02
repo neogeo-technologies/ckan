@@ -34,10 +34,10 @@ class TrackingSummary(domain_object.DomainObject):
         data = obj.order_by('tracking_date desc').first()
         if data:
             return {'total' : data.running_total,
-                    'recent': data.recent_views}
+                    'recent': data.recent_views,
+                    'download': cls.get_total_download(package_id)}
 
-        return {'total' : 0, 'recent' : 0}
-
+        return {'total' : 0, 'recent' : 0, 'download' : 0}
 
     @classmethod
     def get_for_resource(cls, url):
@@ -48,5 +48,12 @@ class TrackingSummary(domain_object.DomainObject):
                     'recent': data.recent_views}
 
         return {'total' : 0, 'recent' : 0}
+
+    @classmethod
+    def get_total_download(cls, package_id):
+        obj = meta.Session.query(cls).autoflush(False)
+        obj = obj.filter(cls.url.op('~')('dataset/%s/resource' % package_id))
+        data = sum([item.running_total for item in obj])
+        return data or 0
 
 meta.mapper(TrackingSummary, tracking_summary_table)
