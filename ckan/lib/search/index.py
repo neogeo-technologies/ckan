@@ -191,6 +191,7 @@ class PackageSearchIndex(SearchIndex):
                 pkg_dict['id'])
         pkg_dict['views_total'] = tracking_summary['total']
         pkg_dict['views_recent'] = tracking_summary['recent']
+        pkg_dict['views_download'] = tracking_summary['download']
 
         resource_fields = [('name', 'res_name'),
                            ('description', 'res_description'),

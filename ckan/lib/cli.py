@@ -1288,13 +1288,13 @@ class Tracking(CkanCommand):
                  SET running_total = (
                     SELECT sum(count)
                     FROM tracking_summary t2
-                    WHERE t1.url = t2.url
+                    WHERE split_part(t1.url,'/download/',1) = split_part(t2.url,'/download/',1)
                     AND t2.tracking_date <= t1.tracking_date
                  )
                  ,recent_views = (
                     SELECT sum(count)
                     FROM tracking_summary t2
-                    WHERE t1.url = t2.url
+                    WHERE split_part(t1.url,'/download/',1) = split_part(t2.url,'/download/',1)
                     AND t2.tracking_date <= t1.tracking_date AND t2.tracking_date >= t1.tracking_date - 14
                  )
                  WHERE t1.running_total = 0 AND tracking_type = 'resource';'''

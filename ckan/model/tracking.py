@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from sqlalchemy import types, Column, Table
+from sqlalchemy import types, Column, Table, text
 
 import meta
 import domain_object
@@ -34,10 +34,10 @@ class TrackingSummary(domain_object.DomainObject):
         data = obj.order_by('tracking_date desc').first()
         if data:
             return {'total' : data.running_total,
-                    'recent': data.recent_views}
+                    'recent': data.recent_views,
+                    'download': cls.get_total_download(package_id)}
 
-        return {'total' : 0, 'recent' : 0}
-
+        return {'total' : 0, 'recent' : 0, 'download' : 0}
 
     @classmethod
     def get_for_resource(cls, url):
@@ -48,5 +48,17 @@ class TrackingSummary(domain_object.DomainObject):
                     'recent': data.recent_views}
 
         return {'total' : 0, 'recent' : 0}
+
+    @classmethod
+    def get_total_download(cls, package_id):
+        url = 'dataset/%s/resource/[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}/download' % package_id
+        query = text("""
+            SELECT SUM(running_total)::int AS total_download FROM (
+              SELECT DISTINCT ON (url) running_total, tracking_date
+              FROM tracking_summary WHERE url ~* :url ORDER BY url, tracking_date DESC) AS sub;
+            """)
+
+        result = meta.Session.execute(query, {'url': url}).fetchone()
+        return result.total_download or 0
 
 meta.mapper(TrackingSummary, tracking_summary_table)
