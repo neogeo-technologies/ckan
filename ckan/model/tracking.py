@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from sqlalchemy import types, Column, Table
+from sqlalchemy import types, Column, Table, text
 
 import meta
 import domain_object
@@ -51,9 +51,14 @@ class TrackingSummary(domain_object.DomainObject):
 
     @classmethod
     def get_total_download(cls, package_id):
-        obj = meta.Session.query(cls).autoflush(False)
-        obj = obj.filter(cls.url.op('~')('dataset/%s/resource' % package_id))
-        data = sum([item.running_total for item in obj])
-        return data or 0
+        url = 'dataset/%s/resource/[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}/download' % package_id
+        query = text("""
+            SELECT SUM(running_total)::int AS total_download FROM (
+              SELECT DISTINCT ON (url) running_total, tracking_date
+              FROM tracking_summary WHERE url ~* :url ORDER BY url, tracking_date DESC) AS sub;
+            """)
+
+        result = meta.Session.execute(query, {'url': url}).fetchone()
+        return result.total_download or 0
 
 meta.mapper(TrackingSummary, tracking_summary_table)
