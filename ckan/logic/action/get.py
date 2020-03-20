@@ -1985,10 +1985,8 @@ def package_search(context, data_dict):
                 else:
                     new_facet_dict['display_name'] = key_
             elif key == 'support':
-                if key_ == 'region-paca':
-                    display_name = u"Région Sud"
-                elif key_ == 'crige-paca':
-                    display_name = "CRIGE PACA"
+                if key_ == 'idgo':
+                    display_name = u"IDGO"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
@@ -1997,8 +1995,10 @@ def package_search(context, data_dict):
                     display_name = u"Données intelligentes"
                 elif key_ == 'donnees-ouvertes':
                     display_name = u"Données ouvertes"
-                elif key_ == 'donnees-geographiques':
-                    display_name = u"Données géographiques"
+                elif key_ == 'api-geographique':
+                    display_name = u"API géographique"
+                elif key_ == 'api-de-donnees':
+                    display_name = u"API de données"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
