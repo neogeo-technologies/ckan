@@ -249,11 +249,6 @@ class GroupController(base.BaseController):
                    'for_view': True, 'extras_as_string': True}
 
         q = c.q = request.params.get('q', '')
-        # Search within group
-        if c.group_dict.get('is_organization'):
-            q += ' owner_org:"%s"' % c.group_dict.get('id')
-        else:
-            q += ' groups:"%s"' % c.group_dict.get('name')
 
         c.description_formatted = \
             h.render_markdown(c.group_dict.get('description'))
@@ -313,6 +308,24 @@ class GroupController(base.BaseController):
                     else:
                         search_extras[param] = value
 
+            # Search within group
+            user_member_of_orgs = [org['id'] for org
+                                   in h.organizations_available('read')]
+
+            if (c.group and c.group.id in user_member_of_orgs):
+                fq = ''
+                context['ignore_capacity_check'] = True
+            else:
+                fq = 'capacity:"public"'
+
+            # Data.gov https://github.com/GSA/datagov-deploy/issues/851
+            # Use fq=organization:xxx instead of q=owner_org:xxx to reduce the
+            # inconsistencies in querying on home page vs organization page.
+            if c.group_dict.get('is_organization'):
+                fq += ' owner_org:"%s"' % c.group_dict.get('id')
+            else:
+                fq += ' groups:"%s"' % c.group_dict.get('name')
+
             facets = OrderedDict()
 
             default_facet_titles = {'organization': _('Organizations'),
@@ -334,7 +347,7 @@ class GroupController(base.BaseController):
 
             data_dict = {
                 'q': q,
-                'fq': '',
+                'fq': fq,
                 'include_private': True,
                 'facet.field': facets.keys(),
                 'rows': limit,
