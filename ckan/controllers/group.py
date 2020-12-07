@@ -249,6 +249,11 @@ class GroupController(base.BaseController):
                    'for_view': True, 'extras_as_string': True}
 
         q = c.q = request.params.get('q', '')
+        # Search within group
+        # if c.group_dict.get('is_organization'):
+        #     q += ' owner_org:"%s"' % c.group_dict.get('id')
+        # else:
+        #     q += ' groups:"%s"' % c.group_dict.get('name')
 
         c.description_formatted = \
             h.render_markdown(c.group_dict.get('description'))
