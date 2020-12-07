@@ -1974,26 +1974,32 @@ def package_search(context, data_dict):
         for key_, value_ in value.items():
             new_facet_dict = {}
             new_facet_dict['name'] = key_
+
             if key in ('groups', 'organization'):
                 display_name = group_titles_by_name.get(key_, key_)
                 display_name = display_name if display_name and display_name.strip() else key_
                 new_facet_dict['display_name'] = display_name
+
             elif key == 'license_id':
                 license = model.Package.get_license_register().get(key_)
                 if license:
                     new_facet_dict['display_name'] = license.title
                 else:
                     new_facet_dict['display_name'] = key_
+
             elif key == 'support':
-                if key_ == 'region-paca':
-                    display_name = u"Région Sud"
-                elif key_ == 'crige-paca':
-                    display_name = "CRIGE PACA"
+                # ADAPTER EN FONCTION DE LA PLATEFORME
+                if key_ == 'idgo':
+                    display_name = u"IDGO"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
+
             elif key == 'datatype':
-                if key_ == 'donnees-intelligentes':
+                # ADAPTER EN FONCTION DE LA PLATEFORME
+                if key_ == 'donnees-moissonnees':
+                    display_name = u"Données moissonées"
+                elif key_ == 'donnees-intelligentes':
                     display_name = u"Données intelligentes"
                 elif key_ == 'donnees-ouvertes':
                     display_name = u"Données ouvertes"
@@ -2006,6 +2012,7 @@ def package_search(context, data_dict):
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'frequency':
+                # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'asneeded':
                     display_name = u"Lorsque nécessaire"
                 elif key_ == 'never':
@@ -2032,25 +2039,30 @@ def package_search(context, data_dict):
                     display_name = u"Bi-annuelle"
                 elif key_ == 'unknown':
                     display_name = u"Inconnue"
+                else:
+                    display_name = key_
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'granularity':
+                # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'indefinie':
                     display_name = u"Indéfinie"
-                if key_ == 'region':
+                elif key_ == 'region':
                     display_name = u"Région"
-                if key_ == 'departement':
+                elif key_ == 'departement':
                     display_name = u"Département"
-                if key_ == 'epci':
+                elif key_ == 'epci':
                     display_name = u"Intercommunalité (EPCI)"
-                if key_ == 'commune':
+                elif key_ == 'commune':
                     display_name = u"Commune"
-                if key_ == 'iris':
+                elif key_ == 'iris':
                     display_name = u"IRIS (quartiers INSEE)"
-                if key_ == 'parcelle-cadastrale':
+                elif key_ == 'parcelle-cadastrale':
                     display_name = u"Parcelle cadastrale"
-                if key_ == 'poi':
+                elif key_ == 'poi':
                     display_name = u"Point d’interêt (POI)"
+                else:
+                    display_name = key_
                 new_facet_dict['display_name'] = display_name
 
             else:
