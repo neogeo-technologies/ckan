@@ -1999,6 +1999,8 @@ def package_search(context, data_dict):
                     display_name = u"Données ouvertes"
                 elif key_ == 'donnees-geographiques':
                     display_name = u"Données géographiques"
+                elif key_ == 'donnees-moissonnees':
+                    display_name = u"Données moissonnées"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
