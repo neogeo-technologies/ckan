@@ -1997,7 +1997,7 @@ def package_search(context, data_dict):
 
             elif key == 'datatype':
                 # ADAPTER EN FONCTION DE LA PLATEFORME
-                if key_ == 'donnees-moisonnees':
+                if key_ == 'donnees-moissonnees':
                     display_name = u"Données moissonées"
                 else:
                     display_name = key_
