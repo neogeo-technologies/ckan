@@ -1998,7 +1998,7 @@ def package_search(context, data_dict):
             elif key == 'datatype':
                 # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'donnees-moissonnees':
-                    display_name = u"Données moissonées"
+                    display_name = u"Données moissonnées"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
