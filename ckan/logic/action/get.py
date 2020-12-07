@@ -1996,8 +1996,8 @@ def package_search(context, data_dict):
 
             elif key == 'datatype':
                 # ADAPTER EN FONCTION DE LA PLATEFORME
-                if key_ == 'donnees-moisonnees':
-                    display_name = u"Données moissonées"
+                if key_ == 'donnees-moissonnees':
+                    display_name = u"Données moissonnées"
                 if key_ == 'donnees-intelligentes':
                     display_name = u"Données intelligentes"
                 elif key_ == 'donnees-ouvertes':
