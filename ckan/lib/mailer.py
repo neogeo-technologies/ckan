@@ -39,7 +39,7 @@ def _mail_recipient(recipient_name, recipient_email,
     subject = Header(subject.encode('utf-8'), 'utf-8')
     msg['Subject'] = subject
     msg['From'] = Header(_("%s") % sender_name, 'utf-8')
-    msg['From'].append("<%s>" % mail_from, 'ascii')   
+    msg['From'].append("<%s>" % mail_from, 'ascii')
     recipient = u"%s <%s>" % (recipient_name, recipient_email)
     msg['To'] = Header(recipient, 'utf-8')
     msg['Date'] = Utils.formatdate(time())
