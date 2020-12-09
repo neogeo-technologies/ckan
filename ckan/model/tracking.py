@@ -51,11 +51,11 @@ class TrackingSummary(domain_object.DomainObject):
 
     @classmethod
     def get_total_download(cls, package_id):
-        url = 'dataset/%s/resource/[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}/download' % package_id
+        url = '%dataset/{package_id}/resource/%/download%'.format(package_id=package_id)
         query = text("""
             SELECT SUM(running_total)::int AS total_download FROM (
               SELECT DISTINCT ON (url) running_total, tracking_date
-              FROM tracking_summary WHERE url ~* :url ORDER BY url, tracking_date DESC) AS sub;
+              FROM tracking_summary WHERE url LIKE :url ORDER BY url, tracking_date DESC) AS sub;
             """)
 
         result = meta.Session.execute(query, {'url': url}).fetchone()
