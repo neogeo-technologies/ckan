@@ -2005,6 +2005,8 @@ def package_search(context, data_dict):
                     display_name = u"Données ouvertes"
                 elif key_ == 'donnees-geographiques':
                     display_name = u"Données géographiques"
+                elif key_ == 'donnees-tabulaires':
+                    display_name = u"Données tabulaires"
                 elif key_ == 'documents-et-etudes':
                     display_name = u"Documents et études"
                 else:
