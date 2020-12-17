@@ -1988,23 +1988,48 @@ def package_search(context, data_dict):
                     new_facet_dict['display_name'] = key_
 
             elif key == 'support':
-                # ADAPTER EN FONCTION DE LA PLATEFORME
+                # Default
                 if key_ == 'idgo':
                     display_name = u"IDGO"
+                # DataSUD
+                elif key_ in ('region-sud', 'region-paca'):
+                    display_name = u"Région SUD"
+                # CRIGE-PACA
+                elif key_ == 'crige-paca':
+                    display_name = u"CRIGE PACA"
+                # OpenIG
+                elif key_ == 'adherent':
+                    display_name = u"Adhérent"
+                elif key_ == 'msp':
+                    display_name = u"MSP"
+                elif key_ == 'lme':
+                    display_name = u"LME"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'datatype':
-                # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'donnees-moissonnees':
                     display_name = u"Données moissonnées"
+                elif key_ == 'donnees-ouvertes':
+                    display_name = u"Données ouvertes"
+                elif key_ == 'donnees-intelligentes':
+                    display_name = u"Données intelligentes"
+                elif key_ == 'donnees-geographiques':
+                    display_name = u"Données géographiques"
+                elif key_ == 'donnees-tabulaires':
+                    display_name = u"Données tabulaires"
+                elif key_ == 'documents-et-etudes':
+                    display_name = u"Documents et études"
+                elif key_ == 'api-geographique':
+                    display_name = u"API géographique"
+                elif key_ == 'api-de-donnees':
+                    display_name = u"API de données"
                 else:
                     display_name = key_
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'frequency':
-                # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'asneeded':
                     display_name = u"Lorsque nécessaire"
                 elif key_ == 'never':
@@ -2036,7 +2061,6 @@ def package_search(context, data_dict):
                 new_facet_dict['display_name'] = display_name
 
             elif key == 'granularity':
-                # ADAPTER EN FONCTION DE LA PLATEFORME
                 if key_ == 'indefinie':
                     display_name = u"Indéfinie"
                 elif key_ == 'region':
